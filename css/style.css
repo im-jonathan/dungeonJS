@@ -1,0 +1,115 @@
+:root {
+  --dark-blue: rgb(41, 52, 98);
+  --light-blue: rgb(28, 214, 206);
+  --yellow: rgb(254, 219, 57);
+  --red: rgb(214, 28, 78);
+  --soft-yellow: rgb(255, 248, 188);
+
+  --button-height: 3rem;
+  --button-bg: #FFC054;
+  --button-bg-light: #FFD996;
+  --button-bg-dark: #F2AA30;
+  --button-text: rgba(0, 0, 0, .5);
+  --button-text-shadow: rgba(255, 255, 255, .15);
+  --button-overlay-medium: rgba(0, 0, 0, .1);
+  --button-overlay-dark: rgba(0, 0, 0, .2);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--dark-blue);
+  color: var(--soft-yellow);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
+}
+
+canvas {
+  border: 2px solid var(--red);
+  border-radius: 8px;
+  background-color: var(--soft-yellow);
+}
+
+.container-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+}
+
+button {
+  position: relative;
+  appearance: none;
+  box-sizing: border-box;
+  font-size: calc(var(--button-height) / 3);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: var(--button-bg);
+  height: var(--button-height);
+  min-width: var(--button-height);
+  border-radius: calc(var(--button-height) / 2);
+  border: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--button-text);
+  text-shadow: 1px 1px var(--button-text-shadow);
+  cursor: pointer;
+  margin: 6px 20px;
+  letter-spacing: .1em;
+  transition: all 200ms ease;
+  box-shadow:
+    -1px -1px 1px var(--button-bg),
+    0 0 0 4px var(--button-overlay-medium),
+    1px 1px 1px var(--button-bg-dark),
+    inset .0 .0 .0 var(--button-overlay-dark),
+    inset .4rem .4rem .25rem var(--button-bg-light)
+}
+
+button:active {
+  box-shadow:
+    -1px -1px 1px var(--button-bg-dark),
+    0 0 0 4px var(--button-overlay-dark),
+    1px 1px 1px var(--button-bg-dark),
+    inset 0 0 0 var(--button-overlay-dark),
+    inset .5rem .5rem .25rem var(--button-bg-light),
+  ;
+}
+
+.messages {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 460px;
+}
+
+p {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+@media (max-width: 440px) {
+  button {
+    margin: 6px 30px;
+  }
+
+  #up,
+  #down {
+    margin-left: 100%;
+    margin-right: 100%
+  }
+}
